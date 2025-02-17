@@ -1,0 +1,14 @@
+<button (click)="fetchUsers()">Load Users</button>
+    <p *ngIf="loading$ | async">Loading...</p>
+    <p *ngIf="error$ | async">Error: {{ error$ | async }}</p>
+    <ul>
+      <li *ngFor="let user of users$ | async">{{  user.firstName }}</li>
+</ul>
+
+<ul>
+  <ng-container *ngIf="(myObservable$ | async) as myobservable">
+  <li *ngFor="let value of myobservable">{{ value }}</li>
+</ng-container>
+</ul>
+
+<a routerLink="/test">Go to Dashboard</a>

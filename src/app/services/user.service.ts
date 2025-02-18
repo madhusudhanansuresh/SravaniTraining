@@ -10,7 +10,7 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   getUsers(): Observable<any> {
-    return this.http.post<any>('http://localhost:5155/api/v1/users', {"name": "", "email": ""})
+    return this.http.post<any>('http://localhost:5219/api/users', {"name": "", "email": ""})
      .pipe(map(response => response.users));
   }
   
